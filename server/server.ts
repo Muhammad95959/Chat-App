@@ -13,9 +13,14 @@ app.use(express.static(publicPath));
 
 io.on("connection", (socket) => {
   console.log("A new user just connected");
+  // socket.emit("newMessage", { from: "Ahmed", text: "This is sad." });
+  socket.emit("newMessage", { from: "Admin", text: "Welcome to the chat app!" }); // send to the client only
+  socket.broadcast.emit("newMessage", { from: "Admin", text: "New user joined!", createdAt: new Date().getTime() }); // broadcast to everyone except the sender
+  socket.on("createMessage", (message) => {
+    console.log("create Message ", message);
+    io.emit("newMessage", { from: message.from, text: message.text, createdAt: new Date().getTime() }); // broadcast to everyone
+  });
   socket.on("disconnect", () => console.log("User was disconnected"));
 });
 
-server.listen(port, () =>
-  console.log(`Server is up on http://localhost:${port}`),
-);
+server.listen(port, () => console.log(`Server is up on http://localhost:${port}`));
