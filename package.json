@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "server": "tsx watch --env-file .env server/server.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.12"
+  },
+  "dependencies": {
+    "express": "4.21.2"
+  }
+}
