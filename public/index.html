@@ -13,6 +13,30 @@
     </form>
     <button id="send-location-btn">Send Location</button>
   </body>
+  <script id="message-template" type="text/html">
+    <div class="message">
+      <div class="message__title">
+        <b>{{from}}</b>
+        <span>{{createdAt}}</span>
+      </div>
+      <div class="message__body">
+        <p>{{text}}</p>
+      </div>
+    </div>
+  </script>
+  <script id="location-message-template" type="text/html">
+    <div class="message">
+      <div class="message-title">
+        <b>{{from}}</b>
+        <span>{{createdAt}}</span>
+      </div>
+      <div class="message-body">
+        <a href="{{url}}" target="_blank">My current location</a>
+      </div>
+    </div>
+  </script>
   <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/libs/moment.js"></script>
+  <script src="/js/libs/mustache.js"></script>
   <script src="/js/index.js"></script>
 </html>
