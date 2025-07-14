@@ -54,8 +54,8 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
-    padding: 20px;
+    padding: 10px;
+    padding-bottom: 60px; /* Adjust for fixed footer */
 }
 
 /* Messages area */
@@ -63,6 +63,7 @@ body {
     flex-grow: 1;
     padding: 0;
     list-style: none;
+    overflow-y: scroll; /* Make messages scrollable */
 }
 
 .message {
@@ -95,6 +96,11 @@ body {
     padding: 10px;
     background-color: #f5f5f5;
     display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 290px; /* Account for sidebar width */
+    right: 0; /* Span to the right edge */
+    z-index: 1000; /* Ensure it stays on top */
 }
 
 .chat__footer form {
@@ -107,14 +113,10 @@ body {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-right: 10px;
 }
 
 .chat__footer button {
-  margin-right: 10px;
-}
-
-.chat__footer button {
+    margin-left: 10px; /* Add margin to the left of buttons */
     background-color: #265083;
     color: #fff;
     border: none;
@@ -131,4 +133,69 @@ body {
 .chat__footer button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+}
+
+html.index, body.index {
+  margin: 0;
+  height: 100%;
+  background: #265083;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.centered-form {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.centered-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-field {
+  text-align: left;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-field input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-field button {
+  background-color: #2a5298;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  width: 100%;
+}
+
+.form-field button:hover {
+  background-color: #1e3c72;
+}
+
+.index h3 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 20px;
 }

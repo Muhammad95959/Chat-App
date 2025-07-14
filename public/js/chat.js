@@ -12,6 +12,7 @@ socket.on("newMessage", function (message) {
   const div = document.createElement("div");
   div.innerHTML = html;
   document.querySelector("#messages").appendChild(div);
+  scrollToBottom();
 });
 
 socket.on("newLocationMessage", function (message) {
@@ -21,6 +22,7 @@ socket.on("newLocationMessage", function (message) {
   const div = document.createElement("div");
   div.innerHTML = html;
   document.querySelector("#messages").appendChild(div);
+  scrollToBottom();
 });
 
 document.querySelector("#submit-btn").addEventListener("click", function (e) {
@@ -46,3 +48,8 @@ document.querySelector("#send-location-btn").addEventListener("click", function 
     },
   );
 });
+
+function scrollToBottom() {
+  const lastMessage = document.querySelector("#messages").lastChild;
+  lastMessage.scrollIntoView();
+}
