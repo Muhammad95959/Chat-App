@@ -2,7 +2,7 @@ import path from "path";
 import http from "http";
 import express from "express";
 import { Server as SocketIOServer } from "socket.io";
-import generateMessage from "./utils/message";
+import { generateMessage, generateLocationMessage } from "./utils/message";
 
 const publicPath = path.join(__dirname, "/../public");
 const port = process.env.PORT || 3000;
@@ -20,6 +20,9 @@ io.on("connection", (socket) => {
     console.log("create Message", message);
     io.emit("newMessage", generateMessage(message.from, message.text)); // broadcast to everyone
     callback("This is server.");
+  });
+  socket.on("createLocationMessage", (coords) => {
+    io.emit("newLocationMessage", generateLocationMessage("Admin", coords.lat, coords.lng));
   });
   socket.on("disconnect", () => console.log("User was disconnected"));
 });

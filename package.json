@@ -1,15 +1,16 @@
 {
   "scripts": {
     "server": "tsx watch --env-file .env server/server.ts",
-    "test": "mocha server/**/*.test.ts",
-    "test-watch": "mocha server/**/*.test.ts --watch"
+    "test": "mocha -r tsx server/**/*.test.ts",
+    "test-watch": "mocha -r tsx --watch server/**/*.test.ts"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.0.12",
     "expect": "^30.0.4",
-    "mocha": "^11.7.1"
+    "mocha": "^11.7.1",
+    "tsx": "^4.16.2"
   },
   "dependencies": {
     "express": "4.21.2",
