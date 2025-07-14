@@ -11,7 +11,7 @@ socket.on("newMessage", function (message) {
   const html = Mustache.render(template, { from: message.from, text: message.text, createdAt: formattedTime });
   const div = document.createElement("div");
   div.innerHTML = html;
-  document.querySelector("body").appendChild(div);
+  document.querySelector("#messages").appendChild(div);
 });
 
 socket.on("newLocationMessage", function (message) {
@@ -20,7 +20,7 @@ socket.on("newLocationMessage", function (message) {
   const html = Mustache.render(template, { from: message.from, url: message.url, createdAt: formattedTime });
   const div = document.createElement("div");
   div.innerHTML = html;
-  document.querySelector("body").appendChild(div);
+  document.querySelector("#messages").appendChild(div);
 });
 
 document.querySelector("#submit-btn").addEventListener("click", function (e) {
