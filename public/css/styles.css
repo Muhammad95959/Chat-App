@@ -2,48 +2,48 @@
 
 /* General body styles */
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #333;
-    background-color: #fff;
-    margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+  margin: 0;
 }
 
 /* Chat container */
 .chat {
-    display: flex;
-    height: 100vh;
+  display: flex;
+  height: 100vh;
 }
 
 /* Sidebar styles */
 .chat__sidebar {
-    width: 250px;
-    background-color: #2c3e50;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+  width: 250px;
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .chat__sidebar h3 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
 }
 
 .chat__sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .chat__sidebar li {
-    padding: 10px 0;
-    font-size: 18px;
+  padding: 10px 0;
+  font-size: 18px;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .chat__sidebar {
     display: none;
   }
@@ -51,98 +51,104 @@ body {
 
 /* Main chat area */
 .chat__main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    padding-bottom: 60px; /* Adjust for fixed footer */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  padding-bottom: 60px;
 }
 
 /* Messages area */
 .chat__messages {
-    flex-grow: 1;
-    padding: 0;
-    list-style: none;
-    overflow-y: scroll; /* Make messages scrollable */
+  flex-grow: 1;
+  padding: 0;
+  list-style: none;
+  overflow-y: scroll;
 }
 
 .message {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+  line-height: 15px;
 }
 
 .message__title {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
 .message__title h4 {
-    font-weight: 600;
-    margin: 0;
-    margin-right: 10px;
+  font-weight: 600;
+  margin: 0;
+  margin-right: 10px;
 }
 
 .message__title span {
-    color: #999;
-    font-size: 12px;
+  color: #999;
+  font-size: 12px;
 }
 
 .message__body {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 /* Message composer */
 .chat__footer {
-    padding: 10px;
-    background-color: #f5f5f5;
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 290px; /* Account for sidebar width */
-    right: 0; /* Span to the right edge */
-    z-index: 1000; /* Ensure it stays on top */
+  padding: 10px;
+  background-color: #f5f5f5;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 290px;
+  right: 0;
+  z-index: 1000;
 }
 
 .chat__footer form {
-    display: flex;
-    flex-grow: 1;
+  display: flex;
+  flex-grow: 1;
 }
 
 .chat__footer input[type="text"] {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .chat__footer button {
-    margin-left: 10px; /* Add margin to the left of buttons */
-    background-color: #265083;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
+  margin-left: 10px;
+  background-color: #265083;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .chat__footer button:hover {
-    background-color: #1a3a60;
+  background-color: #1a3a60;
 }
 
 .chat__footer button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
-html.index, body.index {
+html.index,
+body.index {
   margin: 0;
   height: 100%;
   background: #265083;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family:
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
 }
 
 .centered-form {
@@ -197,5 +203,7 @@ html.index, body.index {
 .index h3 {
   color: #333;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  font-size: 24px;
+  text-align: center;
 }

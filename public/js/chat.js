@@ -1,10 +1,19 @@
 const socket = io();
+
 socket.on("connect", function () {
-  console.log("Connected to server.");
+  let params = new URLSearchParams(window.location.search);
+  socket.emit("join", { name: params.get("name"), room: params.get("room") }, function (err) {
+    if (err) {
+      window.location.href = "/";
+      alert(err);
+    }
+  });
 });
+
 socket.on("disconnect", function () {
   console.log("Disconnected from server.");
 });
+
 socket.on("newMessage", function (message) {
   const formattedTime = moment(message.createdAt).format("LT");
   const template = document.querySelector("#message-template").innerHTML;
