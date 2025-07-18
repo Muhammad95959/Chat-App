@@ -1,6 +1,8 @@
 {
   "scripts": {
     "server": "tsx watch --env-file .env server/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
     "test": "mocha -r tsx server/**/*.test.ts",
     "test-watch": "mocha -r tsx --watch server/**/*.test.ts"
   },
